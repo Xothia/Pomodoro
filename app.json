@@ -1,0 +1,36 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/countdown/countdown"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "backgroundColor":"#2D241F",  
+
+    "navigationBarBackgroundColor": "#F08080",
+    "navigationBarTitleText": "番茄钟",
+    "navigationBarTextStyle":"white",
+
+    "enablePullDownRefresh":true
+  },
+  "tabBar": {
+    "custom": false,
+    "color": "#FDF9EE",
+    "selectedColor": "#965454",
+    "backgroundColor": "#F08080",
+    "borderStyle":"white",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "番茄"
+    }, {
+      "pagePath": "pages/countdown/countdown",
+      "text": "待办"
+    }, {
+      "pagePath": "pages/countdown/countdown",
+      "text": "我"
+    }]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
