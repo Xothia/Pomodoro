@@ -240,8 +240,6 @@ Page({
     clearInterval(this.data.interval);
 
     this.setData({
-      min:25,
-      sec:0,
       interval:'',
     });
   },

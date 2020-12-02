@@ -5,17 +5,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-    date:'选择年月日',
-    time:'选择时分',
+    date:'选 择 年 月 日',
+    time:'选 择 时 分',
     picktime:true,
-    height:'0rpx'
   },
 
   swichchange:function(e){
-    wx.vibrateShort();
     this.setData({
-      date:'选择年月日',
-      time:'选择时分',
+      date:'选 择 年 月 日',
+      time:'选 择 时 分',
       picktime:e.detail.value,
     });
   },
@@ -50,7 +48,7 @@ Page({
       return;
     }
 
-    if((date=='选择年月日'||time=='选择时分')&&this.data.picktime){
+    if((date=='选 择 年 月 日'||time=='选 择 时 分')&&this.data.picktime){
       wx.showToast({
         title: '请选择日期和时间',
         icon: 'none',
@@ -59,12 +57,12 @@ Page({
       return;
     }
     //将日期转换为时间戳 然后携带id timestamp content发起请求
-
+    
 
 
     this.setData({
-      date:'选择年月日',
-      time:'选择时分',
+      date:'选 择 年 月 日',
+      time:'选 择 时 分',
     });
   },
   /**
