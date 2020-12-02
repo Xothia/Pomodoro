@@ -48,6 +48,7 @@ Page({
   },
 
   startcd: function(){
+    wx.vibrateShort();
 
     if(this.data.timese[1]-this.data.timese[0] > 300||this.data.settime){ 
       if(this.data.interval!=''){ //存在定时器则将其清空
@@ -58,7 +59,6 @@ Page({
       }
       return;
     }
-    wx.vibrateShort();
     var that=this;
 
     if(that.data.interval!=''){ //存在定时器则将其清空并将sumtime加到数据库并置0

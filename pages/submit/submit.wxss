@@ -1,6 +1,5 @@
 /* pages/submit.wxss */
 .con{
-  height: 950rpx;
   width: 600rpx;
   margin: 70rpx auto;
   background-color: rgb(224,229,223);

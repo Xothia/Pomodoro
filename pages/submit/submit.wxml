@@ -1,6 +1,6 @@
 <!--pages/submit.wxml-->
 
-<view class="con">
+<view class="con" >
   <form catchsubmit="formSubmit" catchreset="formReset">
     <text class="title" decode="{{true}}">事&emsp;&emsp;件</text>
     <view class="inp">
@@ -9,6 +9,12 @@
       </view>
     </view>
 
+    <text class="title" decode="{{true}}">选 择 日 期</text>
+    <view style="margin: 30rpx 30rpx 30rpx 30rpx; display: flex; justify-content: center;">
+      <switch checked="true" color="#c14747" bindchange="swichchange"></switch>
+    </view>
+
+  <block wx:if="{{picktime}}">
     <text class="title" decode="{{true}}">日&emsp;&emsp;期</text>
     <picker mode="date" bindchange='bddatec'>
       <view class="inp">
@@ -26,6 +32,8 @@
         </view>
       </view>
     </picker>
+
+  </block>
     
     <view class="btn-area" style="margin: 30rpx 30rpx 30rpx 30rpx; display: flex; justify-content: center;">
       <button class='bt' hover-class="hbt" formType="submit">确 认</button>
