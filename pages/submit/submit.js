@@ -5,10 +5,29 @@ Page({
    * 页面的初始数据
    */
   data: {
+    date:'选择年月日',
+    time:'选择时分',
 
   },
+  bddatec: function(e){
+    console.log( e.detail.value);
+    this.setData({
+      date:e.detail.value,
+    });
+  },
+  bdtimec: function(e){
+    console.log( e.detail.value);
+    this.setData({
+      time:e.detail.value,
+    });
+  },
+
   formSubmit: function (e) {
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
+    this.setData({
+      date:'选择年月日',
+      time:'选择时分',
+    });
   },
   /**
    * 生命周期函数--监听页面加载

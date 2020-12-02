@@ -3,6 +3,8 @@
   height: 600rpx;
   width: 600rpx;
   margin-top: 60rpx;
+  box-shadow: 0px 0px 10px rgb(101,101,101);
+  border-radius: 350rpx;
 }
 
 .cir_view{

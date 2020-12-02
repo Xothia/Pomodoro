@@ -2,7 +2,6 @@
 
 <view class="con">
   <form catchsubmit="formSubmit" catchreset="formReset">
-
     <text class="title" decode="{{true}}">事&emsp;&emsp;件</text>
     <view class="inp">
       <view style="margin: 30rpx 30rpx 30rpx 30rpx;">
@@ -11,29 +10,26 @@
     </view>
 
     <text class="title" decode="{{true}}">日&emsp;&emsp;期</text>
-    <picker mode="date">
+    <picker mode="date" bindchange='bddatec'>
       <view class="inp">
-        <text class="title" decode="{{true}}">日&emsp;&emsp;期</text>
+        <view style="margin: 30rpx 30rpx 30rpx 30rpx; display: flex; justify-content: center;">
+          <text >{{date}}</text>
+        </view>
       </view>
     </picker>
 
     <text class="title" decode="{{true}}">时&emsp;&emsp;间</text>
-    <picker mode="time">
+    <picker mode="time" bindchange='bdtimec'>
       <view class="inp">
-        <text class="title" decode="{{true}}">日&emsp;&emsp;期</text>
+        <view style="margin: 30rpx 30rpx 30rpx 30rpx; display: flex; justify-content: center;">
+          <text decode="{{true}}">{{time}}</text>
+        </view>
       </view>
     </picker>
     
-    <view class="page-section page-section-gap">
-      <view class="page-section-title">switch</view>
-      <switch name="switch"/>
+    <view class="btn-area" style="margin: 30rpx 30rpx 30rpx 30rpx; display: flex; justify-content: center;">
+      <button class='bt' hover-class="hbt" formType="submit">确 认</button>
     </view>
 
-
-      <view class="btn-area">
-        <button style="margin: 30rpx 0" type="primary" formType="submit">确认</button>
-      </view>
-
   </form>
-
 </view>
