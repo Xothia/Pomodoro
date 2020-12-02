@@ -1,1 +1,13 @@
 /* pages/submit.wxss */
+.page-body{
+  height: 80%;
+  width: 80%;
+  background-color: tomato;
+}
+.container{
+  height: 80%;
+  width: 80%;
+  margin: 70rpx auto;
+  background-color: rgb(211,212,204);
+  box-shadow: 0px 0px 10px rgb(101,101,101);
+}
