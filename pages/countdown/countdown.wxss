@@ -31,7 +31,7 @@
   height: 500rpx;
   padding-top: 10rpx;
   margin: 60rpx 50rpx 50rpx;
-  background-color: white;
+  background-color: rgb(255,250,244);
   box-shadow: 0px 0px 10px rgb(101,101,101);
 }
 

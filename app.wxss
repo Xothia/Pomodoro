@@ -9,5 +9,5 @@
   box-sizing: border-box;
 } 
 page{
-  background-color:#FDF9EE;
+  background-color:rgb(240,235,229);
 }

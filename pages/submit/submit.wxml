@@ -1,31 +1,39 @@
 <!--pages/submit.wxml-->
-<view class="container">
-  <view class="page-body">
-    <form catchsubmit="formSubmit" catchreset="formReset">
 
-    <view class="page-section">
-      <view class="page-section-title">事件</view>
-      <view class="weui-cells weui-cells_after-title">
-        <view class="weui-cell weui-cell_input">
-          <view class="weui-cell__bd" style="margin: 30rpx 0" >
-            <input class="weui-input" name="input" placeholder="·········" />
-          </view>
-        </view>
+<view class="con">
+  <form catchsubmit="formSubmit" catchreset="formReset">
+
+    <text class="title" decode="{{true}}">事&emsp;&emsp;件</text>
+    <view class="inp">
+      <view style="margin: 30rpx 30rpx 30rpx 30rpx;">
+        <input class="weui-input" name="input" placeholder="·········" />
       </view>
     </view>
-    
 
-
-      <view class="page-section page-section-gap">
-        <view class="page-section-title">switch</view>
-        <switch name="switch"/>
+    <text class="title" decode="{{true}}">日&emsp;&emsp;期</text>
+    <picker mode="date">
+      <view class="inp">
+        <text class="title" decode="{{true}}">日&emsp;&emsp;期</text>
       </view>
+    </picker>
+
+    <text class="title" decode="{{true}}">时&emsp;&emsp;间</text>
+    <picker mode="time">
+      <view class="inp">
+        <text class="title" decode="{{true}}">日&emsp;&emsp;期</text>
+      </view>
+    </picker>
+    
+    <view class="page-section page-section-gap">
+      <view class="page-section-title">switch</view>
+      <switch name="switch"/>
+    </view>
 
 
       <view class="btn-area">
         <button style="margin: 30rpx 0" type="primary" formType="submit">确认</button>
       </view>
-    </form>
-  </view>
+
+  </form>
 
 </view>
