@@ -16,7 +16,7 @@ Page({
     })
   },
   bt1: function(){
-    console.log('toch test');
+   wx.vibrateLong({});
   },
   onLoad: function () {
     if (app.globalData.userInfo) {

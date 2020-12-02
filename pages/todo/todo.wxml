@@ -1,11 +1,8 @@
 <!--pages/countdown/countdown.wxml-->
-<!-- 倒计时模块 -->
-
-
 <block wx:if="{{settime}}">
   <picker mode='multiSelector' range='{{time1}}' bindchange='bindchange'> 
-    <view class='cir_view' hover-class="taptap" hover-start-time="0" hover-stay-time="30"> 
-      <image src='cir.png' class='cir' bindtap='startcd' bindtouchstart='tapstart' bindtouchend='tapend' bindlongpress="longpress" ></image>
+    <view class='cir_view' hover-class="taptap"> 
+      <image src='cir.png' class='cir' bindtap='startcd' bindtouchstart='tapstart' bindtouchend='tapend' bindlongpress="longpress"></image>
       <view wx:if="{{sec > 10 && min < 10}}" class='count_num' bindtap='startcd'>0{{min}}:{{sec}}</view>
       <view wx:elif="{{sec < 10 && min > 10}}" class='count_num' bindtap='startcd'>{{min}}:0{{sec}}</view>
       <view wx:elif="{{sec < 10 && min < 10}}" class='count_num' bindtap='startcd'>0{{min}}:0{{sec}}</view>
@@ -14,7 +11,7 @@
   </picker>
 </block>
 <block wx:else>
-  <view class='cir_view' hover-class="taptap" hover-start-time="0" hover-stay-time="30"> 
+  <view class='cir_view' hover-class="taptap"> 
       <image src='cir.png' class='cir' bindtap='startcd' bindtouchstart='tapstart' bindtouchend='tapend' bindlongpress="longpress"></image>
       <view wx:if="{{sec > 10 && min < 10}}" class='count_num' bindtap='startcd'>0{{min}}:{{sec}}</view>
       <view wx:elif="{{sec < 10 && min > 10}}" class='count_num' bindtap='startcd'>{{min}}:0{{sec}}</view>
@@ -22,14 +19,3 @@
       <view wx:else class='count_num' bindtap='startcd'>{{min}}:{{sec}}</view>
   </view>
 </block>
-
-<!-- 数据统计模块 -->
-<view class='stat'>
-  <view class='day' style="margin:{{d[0]}}"> {{time[0]}}</view>
-  <view class='day' style="margin:{{d[1]}}"> {{time[1]}}</view>
-  <view class='day' style="margin:{{d[2]}}"> {{time[2]}}</view>
-  <view class='day' style="margin:{{d[3]}}"> {{time[3]}}</view>
-  <view class='day' style="margin:{{d[4]}}"> {{time[4]}}</view>
-  <view class='day' style="margin:{{d[5]}}"> {{time[5]}}</view>
-  <view class='day' style="margin:{{d[6]}}"> {{time[6]}}</view>
-</view>

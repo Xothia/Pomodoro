@@ -26,18 +26,15 @@ Page({
   },
 
   longpress:function(e){
-    clearInterval(this.data.interval);
-
     this.setData({
       min:25,
-      sec:0,
-      interval:'',
+      sec:0
     });
   },
   tapstart: function(e){
     this.data.timese[0] = e.timeStamp;
+    console.log(e.timeStamp);
     if(this.data.timese[0]-this.data.timese[1]<150){
-      clearInterval(this.data.interval);
       this.setData({
         settime:true,
       });
@@ -45,19 +42,16 @@ Page({
   },
   tapend: function(e){
     this.data.timese[1] = e.timeStamp;
+    console.log(e.timeStamp);
   },
 
   startcd: function(){
-
-    if(this.data.timese[1]-this.data.timese[0] > 300||this.data.settime){ 
-      if(this.data.interval!=''){ //存在定时器则将其清空
-        clearInterval(this.data.interval);
-        this.setData({
-          interval:'',
-        });
-      }
+    if(this.data.timese[1]-this.data.timese[0] > 350){
       return;
     }
+    this.getUseTime();  //渲染使用时长
+
+    console.log('tap');
     wx.vibrateShort();
     var that=this;
 
@@ -82,7 +76,6 @@ Page({
           if(res.data.errno!=0){
             console.log('failed to add time!'+' errmsg:'+res.data.errmsg+' errno:'+res.data.errno);
           }
-          this.getUseTime();  //渲染使用时长
         },
         fail:function(){
           console.log('failed to request!');
@@ -98,7 +91,7 @@ Page({
             var minn = that.data.min;
             var stime = that.data.sum_time;
     
-            if(minn==0&&secc==0){
+            if(minn==0){
               for(var i=0;i<3;i++){
                 wx.vibrateLong({});
               }
@@ -186,7 +179,7 @@ Page({
             var ritio = time/max;
             that.setData({
               ['d['+i+']']: '20rpx '+(20+590*(1-ritio))+'rpx 20rpx 20rpx',
-              ['time['+i+']']: (time/60).toFixed(1),
+              ['time['+i+']']: time,
             });
           }
 
@@ -227,7 +220,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.getUseTime();  //渲染使用时长
 
 
 
@@ -237,13 +229,7 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-    clearInterval(this.data.interval);
 
-    this.setData({
-      min:25,
-      sec:0,
-      interval:'',
-    });
   },
 
   /**
@@ -251,34 +237,6 @@ Page({
    */
   onUnload: function () {
 
-    clearInterval(that.data.interval);
-    var st = that.data.sum_time;
-    var mid = wx.getStorageSync("my_id");
-
-    that.setData({
-      min:25,
-      sec:0,
-      interval:'',
-      sum_time:0,
-    });
-
-    wx.request({
-      url: 'https://www.r-relight.com/wxapp.pomodoro/addUseTime',
-      data: {
-        id:mid,
-        ad_time:st,
-      },
-      method: 'GET',
-      success: res=>{
-        if(res.data.errno!=0){
-          console.log('failed to add time!'+' errmsg:'+res.data.errmsg+' errno:'+res.data.errno);
-        }
-        this.getUseTime();  //渲染使用时长
-      },
-      fail:function(){
-        console.log('failed to request!');
-      }
-    });
   },
 
   /**

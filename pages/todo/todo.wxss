@@ -1,4 +1,5 @@
 /* pages/countdown/countdown.wxss */
+/* pages/countdown/countdown.wxss */
 .cir{
   height: 600rpx;
   width: 600rpx;
@@ -39,6 +40,4 @@
   color:#FDF9EE;
   box-shadow: 0px 3px 5px 1px rgba(101,101,101,1);
   background-color: #c14747;
-  text-shadow: 2px 2px 4px rgb(102, 101, 101);
-
 }
