@@ -33,7 +33,8 @@ Page({
   },
 
   formSubmit: function (e) {
-    console.log('form发生了submit事件，携带数据为：', e.detail.value)
+    console.log('form发生了submit事件，携带数据为：', e.detail.value);
+    var that = this;
     var date = this.data.date;
     var time = this.data.time;
     var input = e.detail.value['input'];
@@ -57,13 +58,43 @@ Page({
       return;
     }
     //将日期转换为时间戳 然后携带id timestamp content发起请求
-    
+    var timestamp = 0;
+    if(this.data.picktime){
+      timestamp = new Date((date+' '+time).replace(/-/g,"/")).getTime();
+    }
+    console.log(timestamp);
 
+    /*
+    var realtime = new Date(timestamp).toLocaleString().replace(/:\d{1,2}$/,' ');
+    console.log(realtime.slice(5,));
+    */
+    var mid = wx.getStorageSync("my_id");
+    wx.request({
+      url: 'https://www.r-relight.com/wxapp.pomodoro/addToDo',
+      data: {
+        id:mid,
+        b_time:timestamp,
+        content:input,
+      },
+      method: 'GET',
+      success: res=>{
+        that.setData({
+          date:'选 择 年 月 日',
+          time:'选 择 时 分',
+        });
 
-    this.setData({
-      date:'选 择 年 月 日',
-      time:'选 择 时 分',
+        //添加返回 navigateback；
+
+        if(res.data.errno!=0){
+          console.log('failed to add todo!'+' errmsg:'+res.data.errmsg+' errno:'+res.data.errno);
+        }
+      },
+      fail:function(){
+        console.log('failed to request!');
+      }
     });
+
+
   },
   /**
    * 生命周期函数--监听页面加载
