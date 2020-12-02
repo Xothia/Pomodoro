@@ -22,11 +22,14 @@
     "borderStyle": "white",
     "list": [
       {
+        "selectedIconPath": "/pics/tmt_selected.png",  
+        "iconPath": "/pics/tmt.png",  
         "pagePath": "pages/countdown/countdown",
         "text": "番茄"
+
       },
       {
-        "pagePath": "pages/submit/submit",
+        "pagePath": "pages/todo/todo",
         "text": "待办"
       },
       {

@@ -78,16 +78,23 @@ Page({
       },
       method: 'GET',
       success: res=>{
+        
+        if(res.data.errno!=0){
+          console.log('failed to add todo!'+' errmsg:'+res.data.errmsg+' errno:'+res.data.errno);
+        }
+
         that.setData({
           date:'选 择 年 月 日',
           time:'选 择 时 分',
         });
 
+        wx.navigateBack({
+          delta: 1,
+        })
+
         //添加返回 navigateback；
 
-        if(res.data.errno!=0){
-          console.log('failed to add todo!'+' errmsg:'+res.data.errmsg+' errno:'+res.data.errno);
-        }
+
       },
       fail:function(){
         console.log('failed to request!');

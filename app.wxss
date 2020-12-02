@@ -9,5 +9,6 @@
   box-sizing: border-box;
 } 
 page{
-  background-color:rgb(240,235,229);
+  /* background-color:rgb(240,235,229); */
+  background-color:rgb(248,235,216);
 }

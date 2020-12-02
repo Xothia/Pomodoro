@@ -1,21 +1,9 @@
 <!--pages/countdown/countdown.wxml-->
-<block wx:if="{{settime}}">
-  <picker mode='multiSelector' range='{{time1}}' bindchange='bindchange'> 
-    <view class='cir_view' hover-class="taptap"> 
-      <image src='cir.png' class='cir' bindtap='startcd' bindtouchstart='tapstart' bindtouchend='tapend' bindlongpress="longpress"></image>
-      <view wx:if="{{sec > 10 && min < 10}}" class='count_num' bindtap='startcd'>0{{min}}:{{sec}}</view>
-      <view wx:elif="{{sec < 10 && min > 10}}" class='count_num' bindtap='startcd'>{{min}}:0{{sec}}</view>
-      <view wx:elif="{{sec < 10 && min < 10}}" class='count_num' bindtap='startcd'>0{{min}}:0{{sec}}</view>
-      <view wx:else class='count_num' bindtap='startcd'>{{min}}:{{sec}}</view>
-    </view>
-  </picker>
-</block>
-<block wx:else>
-  <view class='cir_view' hover-class="taptap"> 
-      <image src='cir.png' class='cir' bindtap='startcd' bindtouchstart='tapstart' bindtouchend='tapend' bindlongpress="longpress"></image>
-      <view wx:if="{{sec > 10 && min < 10}}" class='count_num' bindtap='startcd'>0{{min}}:{{sec}}</view>
-      <view wx:elif="{{sec < 10 && min > 10}}" class='count_num' bindtap='startcd'>{{min}}:0{{sec}}</view>
-      <view wx:elif="{{sec < 10 && min < 10}}" class='count_num' bindtap='startcd'>0{{min}}:0{{sec}}</view>
-      <view wx:else class='count_num' bindtap='startcd'>{{min}}:{{sec}}</view>
+<block wx:for="{{todolist}}" data-item="item" wx:for-index="idx">
+  <view class='tiao'>
+    第{{idx}}次输出,姓名：{{item.content}}\n
   </view>
 </block>
+
+<button bindtap="tap">ss</button>
+<button bindtap="tap1">+</button>

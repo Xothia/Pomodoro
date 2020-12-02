@@ -1,43 +1,8 @@
-/* pages/countdown/countdown.wxss */
-/* pages/countdown/countdown.wxss */
-.cir{
-  height: 600rpx;
-  width: 600rpx;
-  margin-top: 60rpx;
-}
+.tiao{
+  margin:10rpx 30rpx 10rpx;
+  padding: 20rpx 10rpx 20rpx;
+  background-color: rgb(255,250,244);
+  box-shadow: 0px 0px 5px rgb(101,101,101);
+  overflow: hidden;
 
-.cir_view{
-  display:flex;            
-  justify-content: center;  
-  align-items: center;
-}
-.count_num{
-  text-shadow: 2px 2px 4px #000;
-  position: absolute;
-  left: 0;
-  top: 260rpx;
-  right: 0;
-  margin: auto;
-  text-align: center;
-  font-size: 150rpx;
-  color: #FDF9EE;
-}
-.taptap{
-
-  opacity: 0.9;
-  transform: scale(0.95, 0.95);
-}
-
-.stat{
-  height: 500rpx;
-  padding-top: 10rpx;
-  margin: 60rpx 50rpx 50rpx;
-  background-color: white;
-  box-shadow: 0px 3px 5px 1px rgba(101,101,101,1);
-}
-
-.day{
-  color:#FDF9EE;
-  box-shadow: 0px 3px 5px 1px rgba(101,101,101,1);
-  background-color: #c14747;
 }
