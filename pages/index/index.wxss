@@ -18,7 +18,7 @@
 }
 
 .content{
-  height: 750rpx;
+  /* height: 750rpx; */
   padding-top: 10rpx;
   margin: 60rpx 50rpx 50rpx;
   background-color: rgb(255,250,244);
@@ -38,6 +38,7 @@
   height: 80rpx;
   width: 80rpx;
   margin-top: 30rpx;
+  margin-bottom: 40rpx;
   /*box-shadow: 0px 0px 10px rgb(101,101,101);*/
   border-radius: 100rpx;
 }
@@ -47,11 +48,11 @@
   align-items: center;
   overflow: hidden;
 }
-.fukuan{
+/* .zan{
   height: 400rpx;
   width: 400rpx;
   margin-top: 20rpx;
   margin-bottom: 20rpx;
   box-shadow: 0px 0px 10px rgb(101,101,101);
-  /*border-radius: 100rpx;*/
-}
+  border-radius: 50%;
+} */

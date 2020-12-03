@@ -10,7 +10,7 @@
     "backgroundTextStyle": "light",
     "backgroundColor": "#2D241F",
     "navigationBarBackgroundColor": "#965454",
-    "navigationBarTitleText": "番茄钟",
+    "navigationBarTitleText": "Pomatoes",
     "navigationBarTextStyle": "white",
     "enablePullDownRefresh": true
   },
@@ -37,7 +37,7 @@
         "selectedIconPath": "/pics/duck_selected.png",
         "iconPath": "/pics/duck.png",
         "pagePath": "pages/index/index",
-        "text": "我"
+        "text": "关于"
       }
     ]
   },

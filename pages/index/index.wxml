@@ -14,8 +14,8 @@
     <view class='view_coin'>
       <image src='coin.png' class='coin' bindtap='bt1' ></image>
     </view>
-    <view class='view_coin'>
-      <image src='fukuan.png' class='fukuan' bindtap='bt1' ></image>
-    </view>
+    <!-- <view class='view_coin'>
+      <image src='zan.png' class='zan' bindtap='bt1' ></image>
+    </view> -->
   </view>
 </view>
