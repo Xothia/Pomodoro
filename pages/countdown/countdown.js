@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    dat:['12/24','12/24','12/24','12/24','12/24','12/24','12/24'],
     time1:[[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99],
     [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59]],
 
@@ -12,13 +13,13 @@ Page({
     sec:0,
     sum_time:0,
     interval:'',
-    d:[ "20rpx 610rpx 20rpx 20rpx",
-        "20rpx 610rpx 20rpx 20rpx",
-        "20rpx 610rpx 20rpx 20rpx",
-        "20rpx 610rpx 20rpx 20rpx",
-        "20rpx 610rpx 20rpx 20rpx",
-        "20rpx 610rpx 20rpx 20rpx",
-        "20rpx 610rpx 20rpx 20rpx"],
+    d:[ "20rpx 510rpx 20rpx 120rpx",
+        "20rpx 510rpx 20rpx 120rpx",
+        "20rpx 510rpx 20rpx 120rpx",
+        "20rpx 510rpx 20rpx 120rpx",
+        "20rpx 510rpx 20rpx 120rpx",
+        "20rpx 510rpx 20rpx 120rpx",
+        "20rpx 510rpx 20rpx 120rpx"],
 
     time:[ 0, 0, 0, 0, 0, 0, 0],
     timese:[0, 0],
@@ -194,7 +195,7 @@ Page({
             }
             var ritio = time/max;
             that.setData({
-              ['d['+i+']']: '20rpx '+(20+590*(1-ritio))+'rpx 20rpx 20rpx',
+              ['d['+i+']']: '20rpx '+(20+490*(1-ritio))+'rpx 20rpx 120rpx',
               ['time['+i+']']: (time/60).toFixed(1),
             });
           }
@@ -217,18 +218,29 @@ Page({
 
   },
 
+  getdate: function(){
+    var time = require('../../utils/util.js');
+    for(var i=0;i<7;i++){
+     var str = time.getDay(i);
+      console.log(str);
+      this.setData({
+        ['dat['+i+']']:str,
+      });
+    }
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     this.getUseTime();
+    this.getdate();
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
 
   },
 
@@ -237,6 +249,8 @@ Page({
    */
   onShow: function () {
     this.getUseTime();  //渲染使用时长
+    this.getdate();
+
   },
 
   /**
@@ -289,7 +303,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.getdate();
   },
 
   /**

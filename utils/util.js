@@ -35,9 +35,19 @@ function formatTimeCN(number){
   return (date.getMonth()+1)+'月'+date.getDate()+' '+date.getHours()+':'+formatNumber(date.getMinutes());
 }
 
+function getDay(num) {
+  var today = new Date();
+  var nowTime = today.getTime();
+  var ms = 24*3600*1000*num;
+  var date = new Date(parseInt(nowTime - ms));
+  return (date.getMonth()+1)+'/'+date.getDate();
+}
+
+
 module.exports = {
   formatTime: formatTime,
   formatTimeTwo: formatTimeTwo,
   formatNumber:formatNumber,
   formatTimeCN:formatTimeCN,
+  getDay:getDay,
 }

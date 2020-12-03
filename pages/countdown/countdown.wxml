@@ -25,11 +25,10 @@
 
 <!-- 数据统计模块 -->
 <view class='stat'>
-  <view class='day' style="margin:{{d[0]}}"> {{time[0]}}</view>
-  <view class='day' style="margin:{{d[1]}}"> {{time[1]}}</view>
-  <view class='day' style="margin:{{d[2]}}"> {{time[2]}}</view>
-  <view class='day' style="margin:{{d[3]}}"> {{time[3]}}</view>
-  <view class='day' style="margin:{{d[4]}}"> {{time[4]}}</view>
-  <view class='day' style="margin:{{d[5]}}"> {{time[5]}}</view>
-  <view class='day' style="margin:{{d[6]}}"> {{time[6]}}</view>
+  <block wx:for="{{dat}}" wx:for-index="idx">
+    <view>
+      <view style="float:left;" class='dat_text'>{{dat[idx]}}</view>
+      <view class='day' style="margin:{{d[idx]}}"> {{time[idx]}}</view>
+    </view>
+  </block>
 </view>
