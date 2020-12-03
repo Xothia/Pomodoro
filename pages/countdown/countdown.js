@@ -13,13 +13,13 @@ Page({
     sec:0,
     sum_time:0,
     interval:'',
-    d:[ "20rpx 510rpx 20rpx 120rpx",
-        "20rpx 510rpx 20rpx 120rpx",
-        "20rpx 510rpx 20rpx 120rpx",
-        "20rpx 510rpx 20rpx 120rpx",
-        "20rpx 510rpx 20rpx 120rpx",
-        "20rpx 510rpx 20rpx 120rpx",
-        "20rpx 510rpx 20rpx 120rpx"],
+    d:[ "20rpx 500rpx 20rpx 130rpx",
+        "20rpx 500rpx 20rpx 130rpx",
+        "20rpx 500rpx 20rpx 130rpx",
+        "20rpx 500rpx 20rpx 130rpx",
+        "20rpx 500rpx 20rpx 130rpx",
+        "20rpx 500rpx 20rpx 130rpx",
+        "20rpx 500rpx 20rpx 130rpx"],
 
     time:[ 0, 0, 0, 0, 0, 0, 0],
     timese:[0, 0],
@@ -195,7 +195,7 @@ Page({
             }
             var ritio = time/max;
             that.setData({
-              ['d['+i+']']: '20rpx '+(20+490*(1-ritio))+'rpx 20rpx 120rpx',
+              ['d['+i+']']: '20rpx '+(20+480*(1-ritio))+'rpx 20rpx 130rpx',
               ['time['+i+']']: (time/60).toFixed(1),
             });
           }
@@ -304,6 +304,8 @@ Page({
    */
   onPullDownRefresh: function () {
     this.getdate();
+    this.getUseTime();  //渲染使用时长
+
   },
 
   /**

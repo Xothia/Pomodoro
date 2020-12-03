@@ -1,2 +1,26 @@
-<!--pages/help.wxml-->
-<text>pages/help.wxml</text>
+<view class="con" >
+    <view class="inp">
+      <view style="margin: 10rpx 30rpx 10rpx 30rpx; display: flex; justify-content: center;">
+        <text decode="{{true}}">使&emsp;用&emsp;说&emsp;明</text>
+      </view>
+    </view>
+
+  <text class="title" decode="{{true}}">番&emsp;茄&emsp;钟</text>
+  <view class="inp">
+    <view style="margin: 30rpx 30rpx 30rpx 30rpx; display: flex; justify-content: center;">
+      <text decode="{{true}}">单击：开始计时/暂停计时\n长按：重置到25分钟\n双击+单击：选择倒计时时长</text>
+    </view>
+  </view>
+
+    <text class="title" decode="{{true}}">土&emsp;豆&emsp;清&emsp;单</text>
+    <view class="inp">
+      <view style="margin: 30rpx 30rpx 30rpx 30rpx; display: flex; justify-content: center;">
+        <text decode="{{true}}">长按：完成事项</text>
+      </view>
+    </view>
+
+    <view class="btn-area" style="margin: 30rpx 30rpx 30rpx 30rpx; display: flex; justify-content: center;">
+      <button class='bt' hover-class="hbt" bindtap='confirm'>知 道 了</button>
+    </view>
+
+</view>
