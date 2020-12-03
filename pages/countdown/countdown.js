@@ -35,6 +35,7 @@ Page({
     });
   },
   tapstart: function(e){
+    console.log(e.timeStamp);
     this.data.timese[0] = e.timeStamp;
     if(this.data.timese[0]-this.data.timese[1]<150){
       clearInterval(this.data.interval);
@@ -44,11 +45,19 @@ Page({
     }
   },
   tapend: function(e){
+    console.log(e.timeStamp);
+
     this.data.timese[1] = e.timeStamp;
   },
 
+  bdcancel:function(){
+    this.setData({
+      settime:false,
+    });
+  },
+
   startcd: function(){
-    wx.vibrateShort();
+    //wx.vibrateShort();
 
     if(this.data.timese[1]-this.data.timese[0] > 300||this.data.settime){ 
       if(this.data.interval!=''){ //存在定时器则将其清空
@@ -228,9 +237,6 @@ Page({
    */
   onShow: function () {
     this.getUseTime();  //渲染使用时长
-
-
-
   },
 
   /**

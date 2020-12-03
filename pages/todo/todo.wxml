@@ -1,8 +1,8 @@
 <!--pages/countdown/countdown.wxml-->
 <text class="title" decode="{{true}}">事&emsp;&emsp;&emsp;件</text>
 <block wx:for="{{todolist}}" data-item="item" wx:for-index="idx">
-  <view class='tiao' bindlongtap="blt" data-tdid="{{item.td_id}}">
-    {{item.dt}} {{item.content}}
+  <view class='tiao' bindlongpress="blt" data-tdid="{{item.td_id}}">
+    <text class='dt'>{{item.dt}} </text> <text class='ct'>{{item.content}}</text>
   </view>
 </block>
 

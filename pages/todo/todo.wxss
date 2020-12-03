@@ -24,3 +24,9 @@
 .hbt{
   background-color: #a73e3e;
 }
+.dt{
+  color: #c14747;
+}
+.ct{
+  color: rgb(50,50,50);
+}

@@ -37,7 +37,7 @@ Page({
           console.log('failed to del todo!'+' errmsg:'+res.data.errmsg+' errno:'+res.data.errno);
           return;
         }
-        
+
         that.getToDo();
       },
       fail:function(){
@@ -71,8 +71,9 @@ Page({
         var tdl = res.data.data;
         for(var i=0;i<tdl.length;i++){
           if(tdl[i]['b_time']!=0){
-            var realtime = new Date(tdl[i]['b_time']).toLocaleString().replace(/:\d{1,2}$/,' ');
-            tdl[i]['dt']=realtime.slice(5,);
+            var time = require('../../utils/util.js');
+            var realtime = time.formatTimeCN(tdl[i]['b_time']);
+            tdl[i]['dt']=realtime;
           }
           else{
             tdl[i]['dt']='无日期';
@@ -113,6 +114,7 @@ Page({
    */
   onShow: function () {
 
+    this.getToDo();
 
 
   },

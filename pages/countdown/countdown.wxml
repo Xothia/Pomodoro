@@ -3,7 +3,7 @@
 
 
 <block wx:if="{{settime}}">
-  <picker mode='multiSelector' range='{{time1}}' bindchange='bindchange'> 
+  <picker mode='multiSelector' range='{{time1}}' bindchange='bindchange' bindcancel='bdcancel'> 
     <view class='cir_view' hover-class="taptap" hover-start-time="0" hover-stay-time="30"> 
       <image src='cir.png' class='cir' bindtap='startcd' bindtouchstart='tapstart' bindtouchend='tapend' bindlongpress="longpress" ></image>
       <view wx:if="{{sec > 10 && min < 10}}" class='count_num' bindtap='startcd'>0{{min}}:{{sec}}</view>

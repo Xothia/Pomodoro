@@ -64,10 +64,6 @@ Page({
     }
     console.log(timestamp);
 
-    /*
-    var realtime = new Date(timestamp).toLocaleString().replace(/:\d{1,2}$/,' ');
-    console.log(realtime.slice(5,));
-    */
     var mid = wx.getStorageSync("my_id");
     wx.request({
       url: 'https://www.r-relight.com/wxapp.pomodoro/addToDo',
@@ -93,8 +89,6 @@ Page({
         })
 
         //添加返回 navigateback；
-
-
       },
       fail:function(){
         console.log('failed to request!');
