@@ -9,7 +9,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "backgroundColor": "#2D241F",
-    "navigationBarBackgroundColor": "#F08080",
+    "navigationBarBackgroundColor": "#965454",
     "navigationBarTitleText": "番茄钟",
     "navigationBarTextStyle": "white",
     "enablePullDownRefresh": true
@@ -17,22 +17,26 @@
   "tabBar": {
     "custom": false,
     "color": "#FDF9EE",
-    "selectedColor": "#965454",
-    "backgroundColor": "#F08080",
+    "selectedColor": "#4d2b2b",
+    "backgroundColor": "#965454",
     "borderStyle": "white",
     "list": [
       {
-        "selectedIconPath": "/pics/tmt_selected.png",  
-        "iconPath": "/pics/tmt.png",  
+        "selectedIconPath": "/pics/tm_selected.png",  
+        "iconPath": "/pics/tm.png",  
         "pagePath": "pages/countdown/countdown",
         "text": "番茄"
 
       },
       {
+        "selectedIconPath": "/pics/pt_selected.png",  
+        "iconPath": "/pics/pt.png",  
         "pagePath": "pages/todo/todo",
-        "text": "待办"
+        "text": "土豆"
       },
       {
+        "selectedIconPath": "/pics/duck_selected.png",  
+        "iconPath": "/pics/duck.png", 
         "pagePath": "pages/index/index",
         "text": "我"
       }

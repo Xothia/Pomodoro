@@ -1,9 +1,9 @@
 <!--pages/countdown/countdown.wxml-->
+<text class="title" decode="{{true}}">事&emsp;&emsp;&emsp;件</text>
 <block wx:for="{{todolist}}" data-item="item" wx:for-index="idx">
-  <view class='tiao'>
-    第{{idx}}次输出,姓名：{{item.content}}\n
+  <view class='tiao' bindlongtap="blt" data-tdid="{{item.td_id}}">
+    {{item.dt}} {{item.content}}
   </view>
 </block>
 
-<button bindtap="tap">ss</button>
-<button bindtap="tap1">+</button>
+<button class='bt' hover-class="hbt" bindtap="tap1">+</button>

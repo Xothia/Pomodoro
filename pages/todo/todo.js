@@ -16,29 +16,35 @@ Page({
         "20rpx 610rpx 20rpx 20rpx",
         "20rpx 610rpx 20rpx 20rpx"],
 
-    todolist:[{ 'id'	:	2,
-    'td_id'	:	8  ,
-    'b_time'	:	0   ,
-    'content'	:	'dgshr-0hssf',
-    },
-    {'id'	:	2,
-      'td_id':	12,
-      'b_time'	:	0,
-      'content'	:	'水水水水水水水水',
-      },
-    {'id'	:	2,
-      'td_id'	:	13   ,
-      'b_time'	:	0    ,
-      'content'	:	'！点的啥',
-      },
-    {'id'	:	2,
-      'td_id'	:	4,
-      'b_time'	:	3 ,
-      'content'	:	'dasf',
-      }],
+    todolist:'',
   },
-  tap: function(){
-    this.getToDo();
+
+  blt: function(e){
+    var that=this;
+    var td_id = e.currentTarget.dataset.tdid;
+    var mid = wx.getStorageSync("my_id");
+
+    wx.request({
+      url: 'https://www.r-relight.com/wxapp.pomodoro/delToDo',
+      data: {
+        id:mid,
+        td_id:td_id,
+      },
+
+      method: 'GET',
+      success: res=>{
+        if(res.data.errno!=0){
+          console.log('failed to del todo!'+' errmsg:'+res.data.errmsg+' errno:'+res.data.errno);
+          return;
+        }
+        
+        that.getToDo();
+      },
+      fail:function(){
+        console.log('failed to request!');
+      }
+    });
+
   },
 
   tap1: function(){
@@ -71,19 +77,8 @@ Page({
           else{
             tdl[i]['dt']='无日期';
           }
-
-          //console.log(realtime.slice(5,))
         }
 
-        /*
-        for(let i in tdl){
-          console.log(i['b_time']);
-          var realtime = new Date(timestamp).toLocaleString().replace(/:\d{1,2}$/,' ');
-          console.log(realtime.slice(5,))
-        }
-*/
-
-        //console.log(that.data.todolist[0]['content']);
         that.setData({
           todolist:tdl,
         });
@@ -102,7 +97,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getToDo();
   },
 
   /**
@@ -140,6 +135,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
+    this.getToDo();
 
   },
 
@@ -147,6 +143,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
+    wx.vibrateShort();
 
   },
 

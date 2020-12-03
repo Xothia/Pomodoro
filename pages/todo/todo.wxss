@@ -6,3 +6,21 @@
   overflow: hidden;
 
 }
+.title{
+  font-size: 40rpx;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+  display: flex;
+  justify-content: center;  /*水平*/
+  color:rgb(88, 90, 87);
+  text-shadow: 2px 2px 4px rgb(128, 125, 125);
+}
+.bt{
+  margin: 30rpx auto;
+  background-color: #c14747;
+  color: #fdf9ee;
+  box-shadow: 0px 0px 10px rgb(101,101,101);
+}
+.hbt{
+  background-color: #a73e3e;
+}
