@@ -7,16 +7,49 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    total_time: 0,
   },
+
+  gettotaltime: function(){
+    var that=this;
+    var mid = wx.getStorageSync("my_id");
+    wx.request({
+      url: 'https://www.r-relight.com/wxapp.pomodoro/getUseTime',
+      data: {
+        id:mid,
+      },
+      method: 'GET',
+      success: res=>{
+        if(res.data.errno!=0){
+          console.log('failed to get time!'+' errmsg:'+res.data.errmsg+' errno:'+res.data.errno);
+        }
+        else{
+          var days = res.data.data[0];
+          var tt = days['total_time']
+          that.setData({
+            total_time: (tt/60).toFixed(1),
+          });
+        }
+      },
+      fail:function(){
+        console.log('failed to request!');
+      }
+    });
+  
+  },
+
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
-      url: '../logs/logs'
+      url: '../help/help'
     })
   },
   bt1: function(){
    wx.vibrateLong({});
+   wx.navigateTo({
+    url: '../help/help'
+  })
   },
   onLoad: function () {
     if (app.globalData.userInfo) {
@@ -45,7 +78,10 @@ Page({
         }
       })
     }
+
+    this.gettotaltime();
   },
+
   getUserInfo: function(e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
@@ -53,5 +89,9 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+
+  onShow: function(){
+    this.gettotaltime();
   }
 })

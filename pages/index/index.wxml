@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<view class="container">
+<view class="con">
   <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <block wx:else>
@@ -7,10 +7,15 @@
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
-  <view class="user-motto">
-    <button bindtap="bt1">
-      imabutton
-    </button>
-    <text>{{motto}}</text>
+  <view class="content">
+    <view class='usetime'>
+      番茄钟使用时长：{{total_time}} 分钟
+    </view>
+    <view class='view_coin'>
+      <image src='coin.png' class='coin' bindtap='bt1' ></image>
+    </view>
+    <view class='view_coin'>
+      <image src='fukuan.png' class='fukuan' bindtap='bt1' ></image>
+    </view>
   </view>
 </view>

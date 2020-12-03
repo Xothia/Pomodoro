@@ -76,7 +76,7 @@ Page({
             tdl[i]['dt']=realtime;
           }
           else{
-            tdl[i]['dt']='无日期';
+            tdl[i]['dt']='无 期';
           }
         }
 

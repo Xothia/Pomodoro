@@ -2,7 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/todo/todo",
-    "pages/logs/logs",
+    "pages/help/help",
     "pages/countdown/countdown",
     "pages/submit/submit"
   ],
@@ -22,21 +22,20 @@
     "borderStyle": "white",
     "list": [
       {
-        "selectedIconPath": "/pics/tm_selected.png",  
-        "iconPath": "/pics/tm.png",  
+        "selectedIconPath": "/pics/tm_selected.png",
+        "iconPath": "/pics/tm.png",
         "pagePath": "pages/countdown/countdown",
         "text": "番茄"
-
       },
       {
-        "selectedIconPath": "/pics/pt_selected.png",  
-        "iconPath": "/pics/pt.png",  
+        "selectedIconPath": "/pics/pt_selected.png",
+        "iconPath": "/pics/pt.png",
         "pagePath": "pages/todo/todo",
         "text": "土豆"
       },
       {
-        "selectedIconPath": "/pics/duck_selected.png",  
-        "iconPath": "/pics/duck.png", 
+        "selectedIconPath": "/pics/duck_selected.png",
+        "iconPath": "/pics/duck.png",
         "pagePath": "pages/index/index",
         "text": "我"
       }
