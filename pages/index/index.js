@@ -93,5 +93,9 @@ Page({
 
   onShow: function(){
     this.gettotaltime();
+    wx.showShareMenu({
+      withShareTicket: true,
+      menus:['shareAppMessage','shareTimeline']
+    });
   }
 })

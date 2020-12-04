@@ -250,7 +250,10 @@ Page({
   onShow: function () {
     this.getUseTime();  //渲染使用时长
     this.getdate();
-
+    wx.showShareMenu({
+      withShareTicket: true,
+      menus:['shareAppMessage','shareTimeline']
+    });
   },
 
   /**
